@@ -39,6 +39,7 @@ Get live weather updates for any city or location of your choice. Simply enter y
 - HTML
 - CSS
 - JavaScript
+- Server Side API (https://openweathermap.org/forecast5)
 
 ## Live Deployed Link
 https://drx-88.github.io/Mothers-Report/
