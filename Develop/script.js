@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           forecastCard.classList.add("col-lg-6", "col-md-3");
 
           forecastCard.innerHTML = `
-                <div class="card bg-secondary text-light">
+                <div class="card bg-dark text-light">
                   <div class="card-body">
                     <h5 class="card-title">${forecastDate.toLocaleDateString(
             "en-US",
