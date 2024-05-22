@@ -15,25 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
-
+    const fData = url
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const { name, main, weather, wind } = data;
 
         document.getElementById("locationName").textContent = name;
-        document.getElementById(
-          "temp"
-        ).textContent = `${main.temp.toFixed()} °C`;
-        document.getElementById("weatherDescription").textContent =
-          weather[0].description;
-        document.getElementById(
-          "humidity"
-        ).textContent = `${main.humidity.toFixed()} °C`;
+        document.getElementById("weatherDescription").textContent = weather[0].description;document.getElementById("temp").textContent = `${main.temp.toFixed()} °C`;
         document.getElementById("humidity").textContent = `${main.humidity} %`;
-        document.getElementById(
-          "wind-speed"
-        ).textContent = `${wind.speed.toFixed()} m/s`;
+        document.getElementById("wind-speed").textContent = `${wind.speed.toFixed()} m/s`;
 
 
         weatherData.style.display = "block";
@@ -46,9 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => console.error("Error fetching weather data:", error));
 
-    const Url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${apiKey}`;
-
-    fetch(Url)
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${apiKey}`;
+    fetch(forecastUrl)
       .then((response) => response.json())
 
       .then((data) => {
@@ -94,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const searchOption = document.getElementById("cities");
-const showHide = document.getElementById("history");
+const hideEl = document.getElementById("history");
 
 searchOption.addEventListener("click", (event) => {
   const clickedLine = event.target.innerHTML;
@@ -105,7 +95,7 @@ searchOption.addEventListener("click", (event) => {
 });
 
 
-showHide.addEventListener("click", (event) => {
+hideEL.addEventListener("click", (event) => {
   if (searchOption.style.display === "none") {
     searchOption.style.display = "initial";
   } else {
